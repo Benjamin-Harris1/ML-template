@@ -8,8 +8,13 @@ fi
 
 PROJECT_NAME=$1
 
-# Copy the template folder to the new project directory
-cp -r ML_template $PROJECT_NAME
+# Create the new project directory
+mkdir -p $PROJECT_NAME
+
+# Copy the template files to the new project directory, excluding create_project.sh
+cp -r ml_template/* $PROJECT_NAME
+rm $PROJECT_NAME/create_project.sh
+rm $PROJECT_NAME/README.md
 
 # Navigate to the new project directory
 cd $PROJECT_NAME
